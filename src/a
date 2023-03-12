@@ -1,0 +1,33 @@
+if(isLargeRow==='true' && movie.poster_path){
+    <img
+                        className={`row_poster ${(isLargeRow==='true') && "row_posterLarge"}`}
+                        key={movie.id}
+                        src={`${baseUrl}${(isLargeRow==='true') ? movie.poster_path : movie.backdrop_path}`} 
+                        alt={movie.name} 
+                    />
+}
+if(isLargeRow==='false' && movie.backdrop_path){
+    <img
+                        className={`row_poster ${(isLargeRow==='true') && "row_posterLarge"}`}
+                        key={movie.id}
+                        src={`${baseUrl}${(isLargeRow==='true') ? movie.poster_path : movie.backdrop_path}`} 
+                        alt={movie.name} 
+                    />
+}
+if(
+    (isLargeRow==='true' && movie.poster_path)|| (isLargeRow==='false' && movie.backdrop_path)
+){
+    <img
+                        className={`row_poster ${(isLargeRow==='true') && "row_posterLarge"}`}
+                        key={movie.id}
+                        src={`${baseUrl}${(isLargeRow==='true') ? movie.poster_path : movie.backdrop_path}`} 
+                        alt={movie.name} 
+                    />
+}
+((isLargeRow==='true' && movie.poster_path)||(isLargeRow==='false' && movie.backdrop_path)) &&
+(<img
+    className={`row_poster ${(isLargeRow==='true') && "row_posterLarge"}`}
+    key={movie.id}
+    src={`${baseUrl}${(isLargeRow==='true') ? movie.poster_path : movie.backdrop_path}`} 
+    alt={movie.name} 
+/>)
